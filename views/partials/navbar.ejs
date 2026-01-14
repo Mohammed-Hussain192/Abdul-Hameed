@@ -1,0 +1,253 @@
+<!-- Navbar Partial -->
+<style>
+.nav {
+    height: 2vw;
+    width: 5vw;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    left: 90%;
+    top: 5%;
+    border-radius: 10px;
+    
+    cursor: pointer;
+    z-index: 3;
+}
+
+.main-nav {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    border-radius: 50%; /* Start rounded */
+    overflow: hidden;
+}
+
+.exit {
+    height: 3vw;
+    width: 3vw;
+    background-color: rgb(0, 0, 0);
+    
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    cursor: pointer;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+}
+.exit:hover {
+    border-radius: 50%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5vw;
+}
+
+.menu-item {
+    font-size: 4vw;
+    font-weight: 100;
+    display: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    
+    color: rgb(0, 0, 0);
+}
+#home:hover, #about:hover, #mywork:hover, #certificate:hover, #contact:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+
+}
+@media (max-width: 768px) {
+
+    .nav {
+        height: 40px;
+        width: 70px;
+        font-size: 5vw;
+        left: auto;
+        right: 5%;
+        top: 3%;
+        border-radius: 8px;
+    }
+
+    .main-nav {
+        height: 100%;
+        width: 100%;
+        border-radius: 0; /* full screen menu on mobile */
+    }
+
+    .exit {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+        right: 5%;
+        top: 3%;
+    }
+
+    .menu {
+        gap: 24px;
+    }
+
+    .menu-item {
+        font-size: 36px;
+        font-weight: 600;
+        display: none;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+}
+
+/* ================= VERY SMALL DEVICES ================= */
+
+@media (max-width: 480px) {
+
+    .nav {
+        width: 60px;
+        height: 36px;
+        font-size: 10vw;
+    }
+
+    .exit {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .menu-item {
+        font-size: 30px;
+    }
+}
+</style>
+
+<div class="nav">
+    ☰
+</div>
+
+<div class="main-nav">
+    <div class="exit">X</div>
+    <div class="menu">
+        <div class="menu-item" id="home">HOME</div>
+        <div class="menu-item" id="about" >ABOUT ME</div>
+        <div class="menu-item" id="mywork">MY WORK</div>
+        <div class="menu-item" id="certificate">CERTIFICATIONS</div>
+        <div class="menu-item" id="contact">CONTACT</div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script>
+let nav = document.querySelector('.nav');
+let main = document.querySelector('.main-nav');
+let exit = document.querySelector('.exit');
+let items = document.querySelectorAll('.menu-item');
+
+let isOpen = false;
+
+nav.addEventListener('click', () => {
+    if (!isOpen) {
+        main.style.display = 'flex';
+        nav.style.display = 'none';
+
+        // START off-screen LEFT
+        gsap.set(main, {
+            x: "-90%",
+            scale: 1,
+            borderRadius: "50%"
+        });
+
+        // MOVE INTO VIEW
+        gsap.to(main, {
+            x: "0%",
+            borderRadius: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            onComplete: () => {
+                gsap.fromTo(items,
+                    { x: -100, display: 'none', opacity: 0 },
+                    {
+                        x: 0,
+                        display: 'block',
+                        opacity: 1,
+                        duration: 0.3,
+                        stagger: 0.2
+                    }
+                );
+            }
+        });
+
+        isOpen = true;
+    }
+});
+
+exit.addEventListener('click', closeMenu);
+
+function closeMenu() {
+
+    // hide items first
+    gsap.to(items, {
+        x: -100,
+        opacity: 0,
+        duration: 0.2,
+        stagger: 0.1
+    });
+
+    // MOVE OUT TO RIGHT
+    gsap.to(main, {
+        x: "100%",
+        
+        duration: 0.6,
+        ease: "power3.in",
+        onComplete: () => {
+            main.style.display = "none";
+            nav.style.display = "flex";
+            gsap.set(main, { x: "-100%" }); // reset for next open
+        }
+    });
+
+    isOpen = false;
+}
+
+let  aboutnav = document.getElementById('about');
+aboutnav.addEventListener('click', () => {
+    window.location.href = '/about';    
+});
+let homenav = document.getElementById('home');
+homenav.addEventListener('click', () => {
+    window.location.href = '/';    
+});
+let worknav = document.getElementById('mywork');
+worknav.addEventListener('click', () => {
+    window.location.href = '/my-work';    
+});
+let certnav = document.getElementById('certificate');
+certnav.addEventListener('click', () => {
+    window.location.href = '/certifications';    
+});
+let contactnav = document.getElementById('contact');
+contactnav.addEventListener('click', () => {
+    window.location.href = '/contact';    
+});
+
+
+</script>

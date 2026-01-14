@@ -1,0 +1,269 @@
+body{
+    height: 500vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+    background: linear-gradient(135deg, #eaf6ff, #ffffff);
+}
+
+/* ---------- CONTAINER ---------- */
+.container{
+  
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    
+}
+
+/* ---------- INTRO BOX ---------- */
+
+
+.about{
+    height: 100vh;
+    width: 100vw;
+  background: linear-gradient(
+  -45deg,
+  #ffffff 0%,
+  #ffffff 50%,
+  #87ceeb 50%,
+  #87ceeb 100%
+);
+
+
+    position: fixed;
+     top: 0;
+    left: 0;
+
+   z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.one{
+    height: 100%;
+    width: 50%;
+    background-color: #87cfeb00;
+     display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.two{
+    height: 100%;
+    width: 30%;
+    background-color: #1fd35800;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rt{
+    font-size: 8vw;
+    color: rgb(1, 1, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    
+
+    text-shadow: rgb(95, 81, 81) 1px 0 10px;
+    font-weight: 700;
+ 
+    rotate: -45deg;
+      position: relative;
+    left: 10%;
+    font-family: 'Arial', sans-serif;
+   
+    
+}
+.rtt{
+    font-size: 4vw;
+    color: rgb(1, 1, 1);
+
+    text-shadow: rgb(95, 81, 81) 1px 0 10px;
+    font-weight: 700;
+       position: relative;
+    left: 20%;
+  
+    font-family: 'Arial', sans-serif;
+}
+.btn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5vw;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    right: 10%;
+    text-decoration: none;
+    
+}
+
+.main{
+height: 100vh;
+width: 100%;
+background-color: #ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+ 
+.main2{
+height: 100vh;
+width: 100%;
+background-color: #c12323;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.content{
+    height: 80%;
+    width: 80%;
+   
+    color: #fff;
+    background: #064273;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    font-family: 'Arial', sans-serif;
+}
+p{
+    width: 80%;
+}
+h1{
+    font-size: 3vw;
+    position: relative;
+    right: 31%;
+}
+.animate-text span {
+  display: inline-block;
+  position: relative; /* allows Y movement */
+}
+.animate-text {
+    font-size: 16vw;
+    white-space:nowrap;
+    font-weight: 900;
+    transform:translateX(100%);
+    text-transform: uppercase;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.main3,.main4,.main5{
+    height: 100vh;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-family: 'Arial', sans-serif;
+}
+.main3{
+    background-color: #28a745;
+}
+.main4{
+    background-color: #ffc107;
+}
+.main5{
+    background-color: #6f42c1;
+}
+
+/* ===== EDUCATION SECTION ===== */
+.edu-container {
+    width: 80%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.edu-title {
+    font-size: 4vw;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edu-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-left: 6px solid #ffffff;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.edu-card:hover {
+    transform: translateX(10px);
+}
+
+.edu-card h2 {
+    font-size: 2vw;
+    margin-bottom: 8px;
+}
+
+.edu-card p {
+    font-size: 1.4vw;
+    margin: 0;
+}
+
+.edu-card span {
+    font-size: 1.1vw;
+    opacity: 0.85;
+}
+
+
+/* ===== SKILLS SECTION ===== */
+.skills-container {
+    width: 85%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.skills-title {
+    font-size: 4vw;
+    text-align: center;
+}
+
+.skills-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.skill-category {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.skill-category h2 {
+    font-size: 2.5vw;
+    margin-bottom: 15px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    font-size: 1.4vw;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.skill-category ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #00ffcc;
+}
+

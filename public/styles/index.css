@@ -1,0 +1,386 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #eaf6ff, #ffffff);
+}
+
+/* ---------- CONTAINER ---------- */
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 0;
+}
+
+/* ---------- INTRO BOX ---------- */
+.box1{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #ffffff, #e3f2ff);
+    border-radius: 0;
+    box-shadow: 0 20px 60px rgba(135, 206, 235, 0.35);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- MAIN SECTION ---------- */
+.box3{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    background: linear-gradient(
+        120deg,
+        #ffffff 0%,
+        #eaf6ff 45%,
+        #d6efff 100%
+    );
+}
+
+/* ---------- CLICK CARD ---------- */
+.click{
+    height: 30%;
+    width: 70%;
+    background: linear-gradient(135deg, #87ceeb, #5dade2);
+    border-radius: 18px;
+    color: #ffffff;
+    font-size: 6vw;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    box-shadow: 0 25px 60px rgba(93, 173, 226, 0.45);
+}
+
+/* subtitle */
+span{
+    font-size: 1vw;
+    color: #eaf6ff;
+    opacity: 0.85;
+}
+
+/* ---------- TEXT AREA ---------- */
+.main{
+    height: 40%;
+    width: 50%;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 5%;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 50px rgba(135, 207, 235, 0);
+}
+
+/* ---------- HEADING ---------- */
+.heading{
+    font-size: 2vw;
+    color: #0b3558;
+    margin: 2vh 2vw 0 2vw;
+    font-weight: 700;
+}
+
+/* ---------- TYPEWRITER ---------- */
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  position: relative;
+  left: 4%;
+  top: 4%;
+  text-align: start;
+}
+
+#typewriter {
+  font-size: 2.5vw;
+  color: #2b7bbb;
+
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ---------- PARAGRAPH ---------- */
+p{
+    font-size: 1.2vw;
+    color: #2f4f6f;
+    margin: 2vh 2vw 0 2vw;
+    position: relative;
+    top: 5%;
+    line-height: 1.8;
+}
+
+/* ---------- PROFILE IMAGE ---------- */
+.pic{
+    height: 45%;
+    width: 22.5%;
+    background: linear-gradient(135deg, #87ceeb, #5dade2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #000000;
+    box-shadow: 0 25px 60px rgba(100, 93, 226, 0.45);
+}
+
+img{
+    height: 100%;
+    width: auto;
+}
+
+.socials {
+  display: flex;
+  gap: 18px;
+  margin: 3vh 0 0 2vw;
+}
+
+.socials a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #87ceeb, #5dade2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border: 2px solid #000000;
+  font-size: 20px;
+  box-shadow: 0 12px 30px rgba(93, 173, 226, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(93, 173, 226, 0.6);
+}
+
+
+.about{
+    height: 100vh;
+    width: 100vw;
+  background: linear-gradient(
+  -45deg,
+  #ffffff 0%,
+  #ffffff 50%,
+  #87ceeb 50%,
+  #87ceeb 100%
+);
+
+
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.one{
+    height: 100%;
+    width: 50%;
+    background-color: #87cfeb00;
+     display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.two{
+    height: 100%;
+    width: 30%;
+    background-color: #1fd35800;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rt{
+    font-size: 8vw;
+    color: rgb(1, 1, 1);
+
+    text-shadow: rgb(95, 81, 81) 1px 0 10px;
+    font-weight: 700;
+ 
+    rotate: -45deg;
+    font-family: 'Arial', sans-serif;
+}
+.rtt{
+    font-size: 4vw;
+    color: rgb(1, 1, 1);
+
+    text-shadow: rgb(95, 81, 81) 1px 0 10px;
+    font-weight: 700;
+       position: relative;
+    left: 20%;
+  
+    font-family: 'Arial', sans-serif;
+}
+/* =========================
+   LARGE DESKTOP (1200px+)
+========================= */
+@media (min-width: 1200px) {
+  .heading { font-size: 2vw; }
+  #typewriter { font-size: 2.5vw; }
+  p { font-size: 1.2vw; }
+}
+
+/* =========================
+   TABLET (768px – 1199px)
+========================= */
+@media (max-width: 1199px) {
+  .box3 {
+    flex-direction: column;
+    gap: 4vh;
+    padding-top: 6vh;
+  }
+
+  .main {
+    width: 80%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 4vw;
+  }
+
+  #typewriter {
+    font-size: 4.5vw;
+  }
+
+  p {
+    font-size: 2.2vw;
+    top: 0;
+  }
+
+  .pic {
+    width: 35%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .click {
+    font-size: 7vw;
+    height: 25%;
+  }
+
+  span {
+    font-size: 2vw;
+  }
+}
+
+/* =========================
+   MOBILE (≤ 767px)
+========================= */
+@media (max-width: 767px) {
+  body {
+    overflow-y: auto;
+  }
+  .box1 {
+    height: 100%;
+  }
+ 
+  .socials {
+    display: none;
+ 
+}
+
+
+  .box3 {
+    padding-top: 20vh;   /* 👈 pushes content down */
+    justify-content: flex-start;
+  }
+
+  .container {
+    align-items: flex-start;
+  }
+
+  .main {
+    width: 90%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .heading {
+    font-size: 6vw;
+    margin: 1vh 0;
+  }
+
+  .typewriter-container {
+    left: 0;
+    top: 0;
+  }
+
+  #typewriter {
+    font-size: 6vw;
+    text-align: center;
+  }
+
+  p {
+    font-size: 3.8vw;
+    line-height: 1.7;
+    top: 0;
+  }
+
+  .pic {
+    width: 55%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .click {
+    width: 90%;
+    height: 22%;
+    font-size: 8vw;
+  }
+
+  span {
+    font-size: 3vw;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 7vw;
+  }
+
+  #typewriter {
+    font-size: 7vw;
+  }
+
+  p {
+    font-size: 4.2vw;
+  }
+
+  .pic {
+    width: 65%;
+  }
+
+  .click {
+    font-size: 9vw;
+  }
+
+  span {
+    font-size: 3.5vw;
+  }
+}
